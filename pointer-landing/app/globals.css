@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Reset ─────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: #07090E;
+  color: #fff;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+/* ── Range slider — custom thumb ──────────────────────────────────────── */
+input.pointer-range {
+  outline: none;
+}
+input.pointer-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #10B981;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+  transition: box-shadow 0.15s ease;
+}
+input.pointer-range::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.22);
+}
+input.pointer-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #10B981;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar          { width: 4px; height: 4px; }
+::-webkit-scrollbar-track    { background: transparent; }
+::-webkit-scrollbar-thumb    { background: rgba(255,255,255,0.07); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.13); }
+
+/* ── Selection ─────────────────────────────────────────────────────────── */
+::selection { background: rgba(16,185,129,0.22); color: #fff; }
